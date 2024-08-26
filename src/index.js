@@ -8,12 +8,12 @@ const port = process.env.PORT || 5000;
 const questRoutes = require('./routes/questRoutes');
 
 // Configurando o CORS para aceitar requisições apenas de um domínio específico
-const corsOptions = {
+/*const corsOptions = {
   origin: 'http://localhost:3000',
   optionsSuccessStatus: 200
 };
 
-app.use(cors(corsOptions));
+app.use(cors(corsOptions));*/
 app.use(morgan('combined'));
 app.use(express.json());
 app.use(helmet());
