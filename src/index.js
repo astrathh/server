@@ -12,8 +12,10 @@ const allowedOrigins = process.env.NODE_ENV === 'production'
 
   console.log('Allowed Origins:', allowedOrigins);
 app.use(cors({
-  origin: allowedOrigins,
-  credentials: true
+  origin: '*',
+  credentials: true,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  allowedHeaders: 'Content-Type,Authorization'
 }));
 
 app.use(express.json());
