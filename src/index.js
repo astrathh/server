@@ -6,19 +6,14 @@ const port = process.env.PORT || 5000;
 const questRoutes = require('./routes/questRoutes');
 
 // Configurando o CORS
-const allowedOrigins = process.env.NODE_ENV === 'production' 
-  ? ['https://seu-frontend.vercel.app'] 
-  : ['http://192.168.15.11:3000'];
-
-  console.log('Allowed Origins:', allowedOrigins);
-app.use(cors({
-  origin: '*',  // Em produção, é importante definir a origem correta em vez de usar '*'
+const corsOptions = {
+  origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-  credentials: true,
   preflightContinue: false,
   optionsSuccessStatus: 204
-}));
+};
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
