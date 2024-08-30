@@ -7,16 +7,16 @@ const questRoutes = require('./routes/questRoutes');
 
 // Configurando o CORS
 const corsOptions = {
-  origin: 'https://diagnostico.growthagency.com.br/',  // Domínio específico
+  origin: '*',
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-  preflightContinue: false,  // Mantém o envio de cookies
+  preflightContinue: false,
   optionsSuccessStatus: 204
 };
 
 app.use(cors(corsOptions));
 
-app.options('*', cors(corsOptions));
+app.options('https://diagnostico.growthagency.com.br/', cors(corsOptions));
 
 app.use(express.json());
 
