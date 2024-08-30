@@ -27,3 +27,7 @@ app.use(express.json());
 
 // Usando as rotas
 app.use('/api', questRoutes);
+
+app.listen(port, () => {
+  console.log(`Servidor rodando em http://192.168.15.11:3000`);
+});
