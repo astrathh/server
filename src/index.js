@@ -10,7 +10,7 @@ const corsOptions = {
   origin: 'https://diagnostico.growthagency.com.br/',  // Domínio específico
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
   allowedHeaders: 'Origin, X-Requested-With, Content-Type, Accept, Authorization',
-  credentials: true,  // Mantém o envio de cookies
+  preflightContinue: false,  // Mantém o envio de cookies
   optionsSuccessStatus: 204
 };
 
