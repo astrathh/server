@@ -16,8 +16,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.options('https://diagnostico.growthagency.com.br/', cors(corsOptions));
-
 app.use(express.json());
 
 // Usando as rotas
