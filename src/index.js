@@ -16,7 +16,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.options('https://diagnostico.growthagency.com.br/', cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 app.use(express.json());
 
